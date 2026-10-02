@@ -3,16 +3,16 @@
 
 
 void informarElementosPopularConjuntos(int conjuntoA[], int *qtdA, int conjuntoB[], int *qtdB) {
-    printf("Informe a quantidade de elementos do conjunto A: ");
+    printf("\nInforme a quantidade de elementos do conjunto A: ");
     scanf("%d", qtdA);
-    printf("Informe os elementos do conjunto A:\n");
+    printf("\nInforme os elementos do conjunto A:\n");
     for (int i = 0; i < *qtdA; i++) {
         scanf("%d", &conjuntoA[i]);
     }
 
-    printf("Informe a quantidade de elementos do conjunto B: ");
+    printf("\nInforme a quantidade de elementos do conjunto B: ");
     scanf("%d", qtdB);
-    printf("Informe os elementos do conjunto B:\n");
+    printf("\nInforme os elementos do conjunto B:\n");
     for (int i = 0; i < *qtdB; i++) {
         scanf("%d", &conjuntoB[i]);
     }
@@ -30,8 +30,15 @@ void exibirMenu() {
     printf("[5] Diferença simétrica (A U B) - (A ∩ B)\n");
     printf("[6] Pertinência (x ∈ A)\n");
     printf("[7] Inclusão (A C B)\n");
-    printf("[8] Inclusão (B C A)");
-    printf("[0] Sair");
+    printf("[8] Inclusão (B C A)\n");
+    printf("[9] Inclusão própria (A C B e A ≠ B)\n");
+    printf("[10] Inclusão própria (B C A e B ≠ A)\n");
+    printf("[11] Cardinalidade (|A|)\n");
+    printf("[12] Cardinalidade (|B|)\n");
+    printf("[13] Complemento (Aᶜ)\n");
+    printf("[14] Complemento (Bᶜ)\n");
+    printf("[0] Sair\n");
+    printf("\nEscolha uma opção: ");
 }
 
 
@@ -39,7 +46,7 @@ void uniao(int conjuntoA[], int tamA,int conjuntoB[],int tamB){
     int achou;
     int i,j,k;
 
-        printf("A U B = {");
+        printf("\nA U B = {");
         for (i = 0; i < tamA; i++){
             printf("%d",conjuntoA[i]);
         }
@@ -60,7 +67,7 @@ void uniao(int conjuntoA[], int tamA,int conjuntoB[],int tamB){
 }
 
 void intersecao(int conjuntoA[], int tamA,int conjuntoB[],int tamB){
-            printf("Intersecao = { ");
+            printf("\nIntersecao = { ");
         for (int i = 0; i < tamA; i++){
             for (int j = 0; j < tamB; j++){
                 if (conjuntoA[i] == conjuntoB[j]){
@@ -90,14 +97,15 @@ void diferencaAB(int conjuntoA[], int qtdA, int conjuntoB[], int qtdB) {
         }
     }
 
-    printf("Resultado da diferença (A - B):\n");
+    printf("\nResultado da diferença (A - B):\n{");
     if (qtdR == 0) {
-        printf("Conjunto vazio\n");
+        printf("\nConjunto vazio\n");
         return;
     }
     for (int i = 0; i < qtdR; i++) {
-        printf("%d\n", resultado[i]);
+        printf("%d ", resultado[i]);
     }
+    printf("}\n");
 }
 
 void diferencaBA(int conjuntoA[], int qtdA, int conjuntoB[], int qtdB) {
@@ -119,20 +127,21 @@ void diferencaBA(int conjuntoA[], int qtdA, int conjuntoB[], int qtdB) {
         }
     }
 
-    printf("Resultado da diferença (B - A):\n");
+    printf("\nResultado da diferença (B - A):\n{");
     if (qtdR == 0) {
-        printf("Conjunto vazio\n");
+        printf("\nConjunto vazio\n");
         return;
     }
     for (int i = 0; i < qtdR; i++) {
-        printf("%d\n", resultado[i]);
+        printf("%d ", resultado[i]);
     }
+    printf("}\n");
 }
 
 void diferencaSimetrica(int conjuntoA[], int qtdA, int conjuntoB[], int qtdB) {
     int achou;
 
-    printf("Diferença simétrica = { ");
+    printf("\nDiferença simétrica = { ");
 
     for (int i = 0; i < qtdA; i++) {
         achou = 0;
@@ -168,9 +177,9 @@ void pertinencia(int conjuntoA[], int qtdA, int conjuntoB[], int qtdB) {
     char opcao;
     int achou = 0;
 
-    printf("Informe o elemento a ser verificado: ");
+    printf("\nInforme o elemento a ser verificado: ");
     scanf("%d", &elemento);
-    printf("Informe o conjunto a ser verificado (A/B): ");
+    printf("\nInforme o conjunto a ser verificado (A/B): ");
     scanf(" %c", &opcao);
 
     if (opcao == 'A' || opcao == 'a') {
@@ -180,7 +189,7 @@ void pertinencia(int conjuntoA[], int qtdA, int conjuntoB[], int qtdB) {
                 break;
             }
         }
-        printf("O elemento %d %s ao conjunto A\n", elemento, achou ? "pertence" : "não pertence");
+        printf("\nO elemento %d %s ao conjunto A\n", elemento, achou ? "pertence" : "não pertence");
     } else if (opcao == 'B' || opcao == 'b') {
         for (int i = 0; i < qtdB; i++) {
             if (conjuntoB[i] == elemento) {
@@ -188,9 +197,9 @@ void pertinencia(int conjuntoA[], int qtdA, int conjuntoB[], int qtdB) {
                 break;
             }
         }
-        printf("O elemento %d %s ao conjunto B\n", elemento, achou ? "pertence" : "não pertence");
+        printf("\nO elemento %d %s ao conjunto B\n", elemento, achou ? "pertence" : "não pertence");
     } else {
-        printf("Conjunto inválido.\n");
+        printf("\nConjunto inválido.\n");
     }
 }
 
@@ -207,9 +216,9 @@ void contidoAB(int conjuntoA[], int qtdA, int conjuntoB[], int qtdB) {
     }
 
     if (achou == qtdA) {
-        printf("O conjunto A está contido no conjunto B\n");
+        printf("\nO conjunto A está contido no conjunto B\n");
     } else {
-        printf("O conjunto A não está contido no conjunto B\n");
+        printf("\nO conjunto A não está contido no conjunto B\n");
     }
 }
 
@@ -226,8 +235,114 @@ void contidoBA(int conjuntoA[], int qtdA, int conjuntoB[], int qtdB) {
     }
 
     if (achou == qtdB) {
-        printf("O conjunto B está contido no conjunto A\n");
+        printf("\nO conjunto B está contido no conjunto A\n");
     } else {
-        printf("O conjunto B não está contido no conjunto A\n");
+        printf("\nO conjunto B não está contido no conjunto A\n");
     }
+}
+
+void propriamenteContidoAB(int conjuntoA[], int qtdA, int conjuntoB[], int qtdB) {
+    int achou = 0;
+
+    for (int i = 0; i < qtdA; i++) {
+        for (int j = 0; j < qtdB; j++) {
+            if (conjuntoA[i] == conjuntoB[j]) {
+                achou++;
+                break;
+            }
+        }
+    }
+
+    if (achou == qtdA && qtdA < qtdB) {
+        printf("\nO conjunto A está propriamente contido no conjunto B\n");
+    } else {
+        printf("\nO conjunto A não está propriamente contido no conjunto B\n");
+    }
+}
+
+void propriamenteContidoBA(int conjuntoA[], int qtdA, int conjuntoB[], int qtdB) {
+    int achou = 0;
+
+    for (int i = 0; i < qtdB; i++) {
+        for (int j = 0; j < qtdA; j++) {
+            if (conjuntoB[i] == conjuntoA[j]) {
+                achou++;
+                break;
+            }
+        }
+    }
+
+    if (achou == qtdB && qtdB < qtdA) {
+        printf("\nO conjunto B está propriamente contido no conjunto A\n");
+    } else {
+        printf("\nO conjunto B não está propriamente contido no conjunto A\n");
+    }
+}
+
+void complementoA(int conjuntoA[], int qtdA) {
+            int elemento = 0;
+            int qtdU = 0;
+
+            printf("\nInforme o tamanho do conjunto Universo: ");
+            scanf("%d", &qtdU);
+
+            int conjuntoU[qtdU];
+
+            printf("\nInforme os elementos do Conjunto Universo:");
+
+            for(int j = 0; j < qtdU; j++){
+                printf("Elemento %d: ", j + 1);
+                scanf("%d", &elemento);
+
+                conjuntoU[j] = elemento;
+            }
+            
+            printf("\nAᶜ = { ");
+            for (int i = 0; i < qtdU; i++){
+                int achou = 0;
+                for (int j = 0; j < qtdA; j++){
+                    if(conjuntoU[i] == conjuntoA[j]){
+                        achou = 1;
+                        break;
+                    }
+                }
+                if (achou == 0){
+                    printf("%d ", conjuntoU[i]); 
+                }
+            }
+            printf("}\n");
+}
+
+void complementoB(int conjuntoB[], int qtdB) {
+            int elemento = 0;
+            int qtdU = 0;
+
+            printf("\nInforme o tamanho do conjunto Universo: ");
+            scanf("%d", &qtdU);
+
+            int conjuntoU[qtdU];
+
+            printf("\nInforme os elementos do Conjunto Universo:");
+            //Conjunto Universo
+            for(int j = 0; j < qtdU; j++){
+                printf("Elemento %d: ", j + 1);
+                scanf("%d", &elemento);
+
+                conjuntoU[j] = elemento;
+            }
+            
+            printf("\nBᶜ = { ");
+            for (int i = 0; i < qtdU; i++){
+                int achou = 0;
+                for (int j = 0; j < qtdB; j++){
+                    if(conjuntoU[i] == conjuntoB[j]){
+                        achou = 1;
+                        break;
+                    }
+                }
+                if (achou == 0){
+                    printf("%d ", conjuntoU[i]); 
+                }
+            }
+            printf("}\n");
 }

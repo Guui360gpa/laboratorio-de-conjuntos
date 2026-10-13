@@ -3,5 +3,41 @@
     // Focalizar para exibir as descrições dos atributos existentes.
     // Para obter mais informações, acesse: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
-    "configurations": []
+    "configurations": [
+        {
+            "type": "java",
+            "name": "TesteDivisores",
+            "request": "launch",
+            "mainClass": "TesteDivisores",
+            "projectName": "laboratorio-de-conjuntos_a5f28e"
+        },
+        {
+            "type": "java",
+            "name": "TestePrimos",
+            "request": "launch",
+            "mainClass": "TestePrimos",
+            "projectName": "laboratorio-de-conjuntos_a5f28e"
+        },
+        {
+            "type": "java",
+            "name": "Primos",
+            "request": "launch",
+            "mainClass": "Primos",
+            "projectName": "laboratorio-de-conjuntos_a5f28e"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "laboratorio-de-conjuntos_a5f28e"
+        },
+        {
+            "type": "java",
+            "name": "TesteClassificador",
+            "request": "launch",
+            "mainClass": "TesteClassificador",
+            "projectName": "laboratorio-de-conjuntos_a5f28e"
+        }
+    ]
 }

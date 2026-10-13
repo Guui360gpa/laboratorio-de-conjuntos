@@ -62,11 +62,11 @@ int main() {
             break;
 
         case 11:
-            printf("A cardinalidade do conjunto A é: %d\n", qtdA);
+            cardinalidadeA(conjuntoA, qtdA);
             break;
 
         case 12:
-            printf("A cardinalidade do conjunto B é: %d\n", qtdB);
+            cardinalidadeB(conjuntoB, qtdB);
             break;
 
         case 13:
@@ -78,6 +78,7 @@ int main() {
             break;
             
         default:
+            printf("\nOpcao invalida! Tente novamente.\n");
             break;
         }
     }

@@ -29,10 +29,10 @@ void exibirMenu() {
     printf("[4] Diferença (B - A)\n");
     printf("[5] Diferença simétrica (A U B) - (A ∩ B)\n");
     printf("[6] Pertinência (x ∈ A)\n");
-    printf("[7] Inclusão (A C B)\n");
-    printf("[8] Inclusão (B C A)\n");
-    printf("[9] Inclusão própria (A C B e A ≠ B)\n");
-    printf("[10] Inclusão própria (B C A e B ≠ A)\n");
+    printf("[7] Inclusão (A ⊆ B)\n");
+    printf("[8] Inclusão (B ⊆ A)\n");
+    printf("[9] Inclusão própria (A ⊂ B e A ≠ B)\n");
+    printf("[10] Inclusão própria (B ⊂ A e B ≠ A)\n");
     printf("[11] Cardinalidade (|A|)\n");
     printf("[12] Cardinalidade (|B|)\n");
     printf("[13] Complemento (Aᶜ)\n");
@@ -345,4 +345,27 @@ void complementoB(int conjuntoB[], int qtdB) {
                 }
             }
             printf("}\n");
+}
+
+int contarDistintos(int conjunto[], int qtd) {
+    int cont = 0;
+    for (int i = 0; i < qtd; i++) {
+        int repetido = 0;
+        for (int j = 0; j < i; j++) {
+            if (conjunto[j] == conjunto[i]) {
+                repetido = 1;
+                break;
+            }
+        }
+        if (!repetido) cont++;
+    }
+    return cont;
+}
+
+void cardinalidadeA(int conjuntoA[], int qtdA) {
+    printf("\nCardinalidade do conjunto A: |A| = %d\n", contarDistintos(conjuntoA, qtdA));
+}
+
+void cardinalidadeB(int conjuntoB[], int qtdB) {
+    printf("\nCardinalidade do conjunto B: |B| = %d\n", contarDistintos(conjuntoB, qtdB));
 }

@@ -136,24 +136,6 @@ As tabelas abaixo descrevem **resultados esperados pela leitura do código forne
 [1.0, 5.0] ∩ (5.0, 8.0] = vazia
 ```
 
-## 7. Evidências de execução
-
-Para gerar um log real, execute os comandos a seguir no terminal:
-
-```bash
-javac Intervalo.java Main.java
-java Main > execucao-parte03.log
-```
-
-Depois, abra `execucao-parte03.log` e capture prints das seções `contem`, `interseccao`, `uniao`, `validacoes` e `infinitos`. Salve as imagens, por exemplo, em `imagens/` e inclua-as neste README após confirmar que os arquivos existem:
-
-```markdown
-![Testes de interseção](imagens/testes-interseccao.png)
-![Testes de união](imagens/testes-uniao.png)
-```
-
-**Nota:** não foram fornecidos prints nem logs de execução real. Os nomes de imagens acima são sugestões, não arquivos já existentes.
-
-## 8. Conclusão
+## 7. Conclusão
 
 A Parte 03 traduz conceitos de conjuntos da reta real para uma implementação orientada a objetos. As decisões sobre abertura e fechamento das extremidades são essenciais para determinar corretamente pertinência, interseção e união, principalmente quando dois intervalos se encontram em um único ponto.

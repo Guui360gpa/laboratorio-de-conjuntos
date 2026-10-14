@@ -98,13 +98,6 @@ imagens/
 ├── inclusao-e-pertinencia.png
 └── cardinalidade-e-complemento.png
 ```
-
-Exemplo de inclusão no README, **após criar a imagem**:
-
-```markdown
-![Menu e entrada dos conjuntos](imagens/menu.jpg)
-```
-
 ### Exemplo ilustrativo de saída
 
 Para A = `{1, 2, 3}`, B = `{3, 4, 5}` e opção `5`, o programa deve exibir algo equivalente a:

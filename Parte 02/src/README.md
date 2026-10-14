@@ -147,24 +147,7 @@ As saídas abaixo são **resultados esperados pela lógica do código enviado**,
 | `17` | `Divisores de 17: [1, 17]` |
 | `0` | Mensagem de entrada inválida |
 
-## 7. Evidências de execução
 
-Os prints e logs reais **ainda devem ser capturados no ambiente de desenvolvimento**. Recomenda-se registrar pelo menos:
-
-1. Compilação bem-sucedida dos seis arquivos.
-2. Execução de `java TesteClassificador`, mostrando dízima, fração, inteiro negativo e raiz irracional.
-3. Execução de `java TestePrimos` com entrada `20`.
-4. Execução de `java TesteDivisores` com entrada `12`.
-5. Tratamento de uma entrada inválida e de uma divisão por zero.
-
-Após capturar as imagens, salve-as, por exemplo, em `imagens/` e substitua os caminhos abaixo pelos nomes reais:
-
-```markdown
-![Testes do classificador](imagens/testes-classificador.png)
-![Crivo de Eratóstenes](imagens/teste-primos.png)
-![Listagem de divisores](imagens/teste-divisores.png)
-```
-
-## 8. Conclusão
+## 7. Conclusão
 
 A Parte 02 aplica relações de pertinência e inclusão entre conjuntos numéricos na classificação de valores e utiliza algoritmos de teoria dos números para primos e divisores. A divisão em classes especializadas facilita a leitura e os testes. O cálculo exato de frações geratrizes com `BigInteger` é uma decisão importante para evitar erros de arredondamento, enquanto o Crivo de Eratóstenes e a busca de divisores até a raiz quadrada demonstram escolhas de algoritmos mais eficientes do que abordagens ingênuas.

@@ -165,16 +165,6 @@ Após capturar as imagens, salve-as, por exemplo, em `imagens/` e substitua os c
 ![Listagem de divisores](imagens/teste-divisores.png)
 ```
 
-## 8. Limitações e melhorias possíveis
-
-- Decimais finitos como `5.0` são classificados apenas como racionais e reais, sem reconhecer que representam inteiros.
-- O classificador imprime os conjuntos, mas não apresenta uma justificativa textual detalhada em todos os caminhos de execução.
-- A identificação de raízes cobre apenas as formas positivas previstas na expressão regular e as constantes simbólicas reconhecidas.
-- O crivo usa um vetor proporcional ao limite informado, o que pode consumir muita memória para entradas elevadas.
-- Em `Primos`, expressões como `primo * primo` e `limite + 1` podem sofrer overflow para limites próximos ao máximo de `int`; uma melhoria é utilizar `long` nos cálculos intermediários e validar o limite de alocação.
-- Em `Divisores`, a condição `i * i <= numero` também pode sofrer overflow para entradas muito grandes; uma alternativa é `i <= numero / i`.
-- As classes de teste são programas de demonstração e interação, não testes automatizados com verificações (`assert`) de resultados.
-
 ## 9. Conclusão
 
 A Parte 02 aplica relações de pertinência e inclusão entre conjuntos numéricos na classificação de valores e utiliza algoritmos de teoria dos números para primos e divisores. A divisão em classes especializadas facilita a leitura e os testes. O cálculo exato de frações geratrizes com `BigInteger` é uma decisão importante para evitar erros de arredondamento, enquanto o Crivo de Eratóstenes e a busca de divisores até a raiz quadrada demonstram escolhas de algoritmos mais eficientes do que abordagens ingênuas.

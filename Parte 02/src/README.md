@@ -165,6 +165,6 @@ Após capturar as imagens, salve-as, por exemplo, em `imagens/` e substitua os c
 ![Listagem de divisores](imagens/teste-divisores.png)
 ```
 
-## 9. Conclusão
+## 8. Conclusão
 
 A Parte 02 aplica relações de pertinência e inclusão entre conjuntos numéricos na classificação de valores e utiliza algoritmos de teoria dos números para primos e divisores. A divisão em classes especializadas facilita a leitura e os testes. O cálculo exato de frações geratrizes com `BigInteger` é uma decisão importante para evitar erros de arredondamento, enquanto o Crivo de Eratóstenes e a busca de divisores até a raiz quadrada demonstram escolhas de algoritmos mais eficientes do que abordagens ingênuas.

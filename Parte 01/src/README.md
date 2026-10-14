@@ -102,7 +102,7 @@ imagens/
 Exemplo de inclusão no README, **após criar a imagem**:
 
 ```markdown
-![Menu e entrada dos conjuntos](imagens/entrada-e-menu.png)
+![Menu e entrada dos conjuntos](imagens/menu.jpg)
 ```
 
 ### Exemplo ilustrativo de saída

@@ -154,14 +154,6 @@ Depois, abra `execucao-parte03.log` e capture prints das seções `contem`, `int
 
 **Nota:** não foram fornecidos prints nem logs de execução real. Os nomes de imagens acima são sugestões, não arquivos já existentes.
 
-## 8. Limitações e possíveis melhorias
-
-- **`double` e precisão:** a representação de números reais é aproximada; comparações de igualdade podem sofrer efeitos de arredondamento em cálculos anteriores.
-- **`NaN`:** o construtor não rejeita `Double.NaN`; isso pode gerar objetos sem significado matemático claro.
-- **Valores especiais:** convém validar explicitamente `NaN` e entradas infinitas em métodos públicos, para tornar as regras do domínio mais claras.
-- **Testes:** os exemplos são impressos no console, sem asserções automáticas que sinalizem falhas. Uma evolução seria utilizar JUnit.
-- **Escopo:** a implementação trabalha com dois intervalos por operação; uma extensão poderia operar sobre coleções de intervalos e normalizar seus resultados.
-
-## 9. Conclusão
+## 8. Conclusão
 
 A Parte 03 traduz conceitos de conjuntos da reta real para uma implementação orientada a objetos. As decisões sobre abertura e fechamento das extremidades são essenciais para determinar corretamente pertinência, interseção e união, principalmente quando dois intervalos se encontram em um único ponto.

@@ -115,15 +115,6 @@ Diferença simétrica = { 1 2 4 5 }
 
 > O trecho acima é uma saída **prevista pelo código**, não um log coletado de execução.
 
-## Limitações e melhorias possíveis
-
-- **Elementos repetidos:** a entrada não impede duplicatas. União, interseção e outras operações podem imprimir elementos repetidos, contrariando a representação matemática de conjuntos; a cardinalidade, por outro lado, conta valores distintos.
-- **Capacidade dos vetores:** o programa reserva 100 posições para A e B, mas não valida se as quantidades informadas estão entre 0 e 100.
-- **Validação de entrada:** não há tratamento para `scanf` com entrada inválida ou para tamanhos negativos. O universo do complemento também não é validado.
-- **Inclusão própria:** compara quantidades informadas, não cardinalidades distintas. Com valores repetidos, a conclusão pode ser incorreta.
-- **Formatação:** em `diferencaAB` e `diferencaBA`, quando o resultado é vazio, a função retorna antes de imprimir a chave de fechamento.
-- **Cabeçalho:** as funções `cardinalidadeA` e `cardinalidadeB` são chamadas em `main.c`, mas não aparecem no `conjuntos.h` fornecido. É necessário adicionar seus protótipos para evitar problemas de compilação em C moderno.
-
 ## Conclusão
 
 A Parte 01 aplica conceitos da teoria dos conjuntos por meio de vetores, laços de repetição, comparações e funções em C. O programa cobre operações fundamentais e permite observar como propriedades matemáticas podem ser traduzidas em algoritmos. As melhorias prioritárias são validar as entradas, impedir duplicatas e ajustar as declarações das funções.
